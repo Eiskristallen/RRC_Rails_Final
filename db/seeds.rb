@@ -1,5 +1,7 @@
 #   Book Data 
 # Book.destory_all
+# Category.destory_all
+# Classification.destory_all
 # Book.create(
 #   title:"The Real Anthony Fauci: Bill Gates, Big Pharma, and the Global War on Democracy and Public Health",
 #   description:"As director of the National Institute of Allergy and Infectious Diseases (NIAID), Dr. Anthony Fauci dispenses $6.1 billion in annual taxpayer-provided funding for scientific research, allowing him to dictate the subject, content, and outcome of scientific health research across the globe. Fauci uses the financial clout at his disposal to wield extraordinary influence over hospitals, universities, journals, and thousands of influential doctors and scientists—whose careers and institutions he has the power to ruin, advance, or reward.",
@@ -84,19 +86,86 @@
 #   quantity:13,
 #   author:"Michael Connelly",
 # )
-#  Categories Data
-Category.create(
-  category:"Literary Fiction"
-)
-Category.create(
-  category:"Mystery"
-)
-Category.create(
-  category:"Thriller"
-)
-Category.create(
-  category:"Historical"
-)
-Category.create(
-  category:"Romance"
+#      Categories Data
+# Category.create(
+#   category:"Literary Fiction"
+# )
+# Category.create(
+#   category:"Mystery"
+# )
+# Category.create(
+#   category:"Thriller"
+# )
+# Category.create(
+#   category:"Historical"
+# )
+# Category.create(
+#   category:"Romance"
+# )
+#        Classification Data
+# Classification.create(
+#   book_id:1,
+#   category_id:2,
+#   dateClassify:"2020-1-12 10:21"
+# )
+# Classification.create(
+#   book_id:2,
+#   category_id:5,
+#   dateClassify:"2021-11-18 20:46"
+# )
+# Classification.create(
+#   book_id:3,
+#   category_id:2,
+#   dateClassify:"2001-2-1 15:31"
+# )
+# Classification.create(
+#   book_id:4,
+#   category_id:3,
+#   dateClassify:"2019-11-8 20:11"
+# )
+# Classification.create(
+#   book_id:5,
+#   category_id:4,
+#   dateClassify:"2001-5-22 13:21"
+# )
+# Classification.create(
+#   book_id:6,
+#   category_id:1,
+#   dateClassify:"2013-7-21 13:00"
+# )
+# Classification.create(
+#   book_id:7,
+#   category_id:1,
+#   dateClassify:"2006-4-23 11:31"
+# )
+# Classification.create(
+#   book_id:8,
+#   category_id:5,
+#   dateClassify:"2015-9-21 21:15"
+# )
+# Classification.create(
+#   book_id:9,
+#   category_id:2,
+#   dateClassify:"2016-2-15 13:21"
+# )
+# Classification.create(
+#   book_id:10,
+#   category_id:3,
+#   dateClassify:"2017-9-11 20:42"
+# )
+# Classification.create(
+#   book_id:11,
+#   category_id:1,
+#   dateClassify:"2021-11-18 20:26"
+# )
+# Classification.create(
+#   book_id:12,
+#   category_id:4,
+#   dateClassify:"2018-6-15 9:31"
+# )
+#      User data
+User.create(
+  username:"QingbeiHuang@gmail.com",
+  password:"123456",
+  shipAddress:"Manitoba 215-91 Main St"
 )

@@ -163,9 +163,32 @@
 #   category_id:4,
 #   dateClassify:"2018-6-15 9:31"
 # )
+#       Province Data
+# Province.create(
+#   name:"Manitoba",
+#   tax:1,
+#   GST:0.05,
+#   PST:0.07,
+#   FST:0
+# )
+# Province.create(
+#   name:"Alberta",
+#   tax:1,
+#   GST:0.05,
+#   PST:0,
+#   FST:0
+# )
+# Province.create(
+#   name:"British Columbia",
+#   tax:1,
+#   GST:0.05,
+#   PST:0.07,
+#   FST:0
+# )
 #      User data
 User.create(
   username:"QingbeiHuang@gmail.com",
   password:"123456",
-  shipAddress:"Manitoba 215-91 Main St"
+  shipAddress:"Manitoba 215-91 Main St",
+  province_id:1
 )

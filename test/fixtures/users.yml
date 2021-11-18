@@ -4,8 +4,10 @@ one:
   username: MyString
   password: MyString
   shipAddress: MyString
+  province: one
 
 two:
   username: MyString
   password: MyString
   shipAddress: MyString
+  province: two

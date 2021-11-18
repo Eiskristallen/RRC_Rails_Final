@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :username
       t.string :password
       t.string :shipAddress
+      t.references :province, null: false, foreign_key: true
 
       t.timestamps
     end

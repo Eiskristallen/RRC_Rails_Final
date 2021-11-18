@@ -6,7 +6,6 @@ one:
   GST: 1.5
   PST: 1.5
   FST: 1.5
-  user: one
 
 two:
   tax: 1
@@ -14,4 +13,3 @@ two:
   GST: 1.5
   PST: 1.5
   FST: 1.5
-  user: two

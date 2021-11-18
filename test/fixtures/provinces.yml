@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tax: 1
+  name: MyString
+  GST: 1.5
+  PST: 1.5
+  FST: 1.5
+  user: one
+
+two:
+  tax: 1
+  name: MyString
+  GST: 1.5
+  PST: 1.5
+  FST: 1.5
+  user: two

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderTime: 2021-11-18 14:15:35
+  total: 1.5
+  shipAddress: MyString
+  orderNum: MyString
+  GST: 1.5
+  PST: 1.5
+  FST: 1.5
+  user: one
+
+two:
+  orderTime: 2021-11-18 14:15:35
+  total: 1.5
+  shipAddress: MyString
+  orderNum: MyString
+  GST: 1.5
+  PST: 1.5
+  FST: 1.5
+  user: two

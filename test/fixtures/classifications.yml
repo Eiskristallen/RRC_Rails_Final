@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateClassify: 2021-11-18 14:13:22
+  book: one
+  category: one
+
+two:
+  dateClassify: 2021-11-18 14:13:22
+  book: two
+  category: two

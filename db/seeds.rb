@@ -186,9 +186,10 @@
 #   FST:0
 # )
 #      User data
-User.create(
-  username:"QingbeiHuang@gmail.com",
-  password:"123456",
-  shipAddress:"Manitoba 215-91 Main St",
-  province_id:1
-)
+# User.create(
+#   username:"QingbeiHuang@gmail.com",
+#   password:"123456",
+#   shipAddress:"Manitoba 215-91 Main St",
+#   province_id:1
+# )
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

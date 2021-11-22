@@ -5,7 +5,7 @@ ActiveAdmin.register Book do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :title, :description, :price, :quantity, :author, :category,:image
+   permit_params :title, :description, :price, :quantity, :author,:image, classifications_attributes:[:id,:dateClassify,:book_id,:category_id,:_destroy]
   #
   # or
   #
@@ -18,9 +18,9 @@ ActiveAdmin.register Book do
   index do
     column :title
     column :categories do |book|
-      table_for book.categories.order('category ASC') do
+      table_for book.categories.order('name ASC') do
         column do |category|
-          category.category
+          category.name
         end
        end
     end
@@ -29,15 +29,31 @@ ActiveAdmin.register Book do
     end
     actions
   end
+
+
   form do |f|
     f.semantic_errors # shows errors on :base
     f.inputs          # builds an input field for every attribute
     # let's add this piece:
     f.inputs do
-      f.input :categories, :as => :select, :multiple => true, :collection => Category.all.map { |kw| ["#{kw.category.capitalize}", kw.id] }
+      f.has_many :classifications, allow_destroy: true do |n_f|
+          n_f.input :category
+      end
+      # f.input :categories, :as => :select, :multiple => true, :collection => Category.all.map { |kw| ["#{kw.category.capitalize}", kw.id] }
       f.input :image, as: :file, hint: f.object.image.present? ? image_tag(f.object.image):""    
     end
-    f.actions         # adds the 'Submit' and 'Cancel' buttons
+    # f.has_many :classifications do |app_f|
+    #   app_f.inputs "Categories" do
+    #     if !app_f.object.nil?
+    #       # show the destroy checkbox only if it is an existing appointment
+    #       # else, there's already dynamic JS to add / remove new appointments
+    #       app_f.input :_destroy, :as => :boolean, :label => "Destroy?"
+    #     end
+
+    #     app_f.input :category # it should automatically generate a drop-down select to choose from your existing patients
+    #   end
+    # end 
+    f.actions       # adds the 'Submit' and 'Cancel' buttons
   end
   
 end

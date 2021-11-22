@@ -88,19 +88,19 @@
 # )
 #      Categories Data
 # Category.create(
-#   category:"Literary Fiction"
+#   name:"Literary Fiction"
 # )
 # Category.create(
-#   category:"Mystery"
+#   name:"Mystery"
 # )
 # Category.create(
-#   category:"Thriller"
+#   name:"Thriller"
 # )
 # Category.create(
-#   category:"Historical"
+#   name:"Historical"
 # )
 # Category.create(
-#   category:"Romance"
+#   name:"Romance"
 # )
 #        Classification Data
 # Classification.create(

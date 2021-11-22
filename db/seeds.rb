@@ -192,4 +192,5 @@
 #   shipAddress:"Manitoba 215-91 Main St",
 #   province_id:1
 # )
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+#        active admin user
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -1,0 +1,10 @@
+<p>
+  Found <%= pluralize(@books.size, 'result') %>
+  for the search term "<%= params[:search_term] %>".
+</p>
+
+<div class="search-results columns is-multiline">
+  <%= render partial: 'books/book',
+             collection: @books,
+             locals: { show_link: true } %>
+</div>

@@ -1,3 +1,4 @@
+require 'faker'
 #   Book Data 
 # Book.destory_all
 # Category.destory_all
@@ -198,6 +199,20 @@
 
 
 # faker 100 items
-100.times{
-  
-}
+# 100.times{
+#    Book.create(
+#   title:Faker::Book.title,
+#   description:Faker::Quote.famous_last_words,
+#   price:Faker::Number.decimal(l_digits: 2),
+#   quantity:Faker::Number.number(digits: 3),
+#   author:Faker::Book.author,
+# )
+# }
+# for value in (13..113)
+#   Classification.create(
+#     book_id:value,
+#     category_id:[1,2,3,4,5].sample,
+#     dateClassify:DateTime.now.to_s(:db)
+#   )
+# end
+

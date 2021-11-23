@@ -194,3 +194,10 @@
 # )
 #        active admin user
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+
+
+# faker 100 items
+100.times{
+  
+}

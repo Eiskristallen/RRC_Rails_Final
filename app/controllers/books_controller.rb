@@ -1,9 +1,11 @@
 class BooksController < ApplicationController
   def index
+    @c = Category.all.map{ |u| [ u.name, u.id ] }
     @books = Book.order(:title)
   end
 
   def show
+    @c = Category.all.map{ |u| [ u.name, u.id ] }
     @book = Book.find(params[:id])
   end
   def search

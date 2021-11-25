@@ -1,6 +1,11 @@
 <h1>Books#index</h1>
 <%=render :partial => 'admin/about'%>
 <div>
+<% @categories.each do |category| %>
+ <p><%=link_to category.name, category%></p> 
+<% end %>
+</div>
+<div>
 <% @books.each do |book| %>
   <% if book.quantity != 0 %>
      <p> <%=link_to book.title,book%></p>
@@ -22,7 +27,7 @@
 <h2>Update recently</h2>
 <% @books.each do |book| %>
      <% if book.updated_at.to_time>(DateTime.now-3).to_time && (DateTime.now-3).to_time >= book.created_at.to_time%>
-          <p><%= link_to book.title, book %>(updated)</p>
+          <p><%= link_to book.title, book %>(recently updated)</p>
     <% end %>
 <% end %>
 </div>

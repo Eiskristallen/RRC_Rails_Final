@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   def index
     @c = Category.all.map{ |u| [ u.name, u.id ] }
     @books = Book.order(:title)
+    @categories = Category.all
   end
 
   def show

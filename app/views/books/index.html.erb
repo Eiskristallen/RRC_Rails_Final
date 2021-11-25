@@ -1,5 +1,28 @@
 <h1>Books#index</h1>
 <%=render :partial => 'admin/about'%>
+<div>
 <% @books.each do |book| %>
-  <p><%= link_to book.title, book %></p>
+  <% if book.quantity != 0 %>
+     <p> <%=link_to book.title,book%></p>
+    <% else %>
+      <p><%=book.title%>(Sold out)</p>
+    <% end %>
 <% end %>
+</div>
+<div>
+<h2>New book</h2>
+<% @books.each do |book| %>
+     <% if book.created_at.to_time>(DateTime.now-3).to_time && book.updated_at.to_time>(DateTime.now-3).to_time || book.created_at.to_time>(DateTime.now-3).to_time%>
+          <p><%= link_to book.title, book %>(new)</p>
+    <% end %>
+<% end %>
+</div>
+
+<div>
+<h2>Update recently</h2>
+<% @books.each do |book| %>
+     <% if book.updated_at.to_time>(DateTime.now-3).to_time && (DateTime.now-3).to_time >= book.created_at.to_time%>
+          <p><%= link_to book.title, book %>(updated)</p>
+    <% end %>
+<% end %>
+</div>

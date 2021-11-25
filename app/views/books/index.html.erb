@@ -6,6 +6,7 @@
 <% end %>
 </div>
 <div>
+<%= will_paginate @books %>  
 <% @books.each do |book| %>
   <% if book.quantity != 0 %>
      <p> <%=link_to book.title,book%></p>
@@ -13,6 +14,7 @@
       <p><%=book.title%>(Sold out)</p>
     <% end %>
 <% end %>
+<%= will_paginate @books %>
 </div>
 <div>
 <h2>New book</h2>
@@ -25,9 +27,11 @@
 
 <div>
 <h2>Update recently</h2>
+
 <% @books.each do |book| %>
      <% if book.updated_at.to_time>(DateTime.now-3).to_time && (DateTime.now-3).to_time >= book.created_at.to_time%>
           <p><%= link_to book.title, book %>(recently updated)</p>
     <% end %>
 <% end %>
+
 </div>

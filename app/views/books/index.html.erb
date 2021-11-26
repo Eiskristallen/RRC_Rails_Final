@@ -31,5 +31,10 @@
           <p><%= link_to book.title, book %>(recently updated)</p>
     <% end %>
 <% end %>
-
+</div>
+<div>
+order
+<% @orders.each do |order| %>
+ <p><%=order.account.email%></p> 
+<% end %>
 </div>

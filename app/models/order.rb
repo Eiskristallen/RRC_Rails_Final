@@ -1,5 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :user
+  belongs_to :account
   has_many :books,:through => :purchases
   has_many :purchases, :dependent => :destroy
   validates :orderTime,:total,:shipAddress,:orderNum,:quantity, presence: true

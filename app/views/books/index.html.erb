@@ -1,10 +1,10 @@
-<h1>Books#index</h1>
-<%=render :partial => 'admin/about'%>
+<h1>Books</h1>
 <div>
 <% @categories.each do |category| %>
  <p><%=link_to category.name, category%></p> 
 <% end %>
 </div>
+<p>Books</p>
 <div>
 <% @books.each do |book| %>
   <% if book.quantity != 0 %>
@@ -14,27 +14,4 @@
     <% end %>
 <% end %>
 </div>
-<div>
-<h2>New book</h2>
-<% @books.each do |book| %>
-     <% if book.created_at.to_time>(DateTime.now-3).to_time && book.updated_at.to_time>(DateTime.now-3).to_time || book.created_at.to_time>(DateTime.now-3).to_time%>
-          <p><%= link_to book.title, book %>(new)</p>
-    <% end %>
-<% end %>
-</div>
-
-<div>
-<h2>Update recently</h2>
-
-<% @books.each do |book| %>
-     <% if book.updated_at.to_time>(DateTime.now-3).to_time && (DateTime.now-3).to_time >= book.created_at.to_time%>
-          <p><%= link_to book.title, book %>(recently updated)</p>
-    <% end %>
-<% end %>
-</div>
-<div>
-order
-<% @orders.each do |order| %>
- <p><%=order.account.email%></p> 
-<% end %>
-</div>
+<%= paginate @books %>

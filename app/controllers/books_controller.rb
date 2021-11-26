@@ -1,8 +1,9 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
-    @categories = Category.all
-    @orders = Order.all
+   @books = Book.all
+   @books = Kaminari.paginate_array(@books).page(params[:page]).per(5)
+  @categories = Category.all
+  @orders = Order.all
   end
   def show
     @book = Book.find(params[:id])

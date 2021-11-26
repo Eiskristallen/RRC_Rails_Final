@@ -1,12 +1,5 @@
-<%= form_with(url: search_books_path, local: true, method: "get", class: 'mt-5 mb-5') do %>
-  <div class="field has-addons">
-    <div class="control">
-      <%= text_field_tag(:search_term, nil, class: 'input', placeholder: 'Search Book By Name') %>
-    </div>
-    <%= select_tag(:category_id, options_for_select(@c),{ include_blank: true}) %>
-
-    <div class="control">
-      <%= submit_tag("Search", class: "button is-info") %>
-    </div>
-  </div>
+<%= form_with(url: search_books_path, local: true, method: "get", class: 'd-flex') do %>
+      <%= text_field_tag(:search_term, nil, class: 'form-control', placeholder: 'Search Book By Name') %>
+      <%= select_tag(:category_id, options_for_select(@c),{ :include_blank => "select category"}) %>
+      <%= submit_tag("Search", class: "btn btn-warning") %>
 <% end %>

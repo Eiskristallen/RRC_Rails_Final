@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :books do
     collection do
       get :search
+      get :new_release
+      get :recently_update
     end
   end
   resources :categories 

@@ -8,6 +8,14 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
   end
+  def new_release
+    @books = Book.all
+    @books = Kaminari.paginate_array(@books).page(params[:page])
+  end
+  def recently_update
+    @books = Book.all
+    @books = Kaminari.paginate_array(@books).page(params[:page])
+  end
   def search
     if !params[:category_id].empty?
       @books = Book.joins(:classifications).where(classifications: { category_id: params[:category_id] }).where("title OR description LIKE ?","%#{params[:search_term]}%")

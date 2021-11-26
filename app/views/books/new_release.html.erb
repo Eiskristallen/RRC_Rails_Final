@@ -1,0 +1,9 @@
+<div>
+<h2>New Released Book</h2>
+<% @books.each do |book| %>
+     <% if book.created_at.to_time>(DateTime.now-3).to_time && book.updated_at.to_time>(DateTime.now-3).to_time || book.created_at.to_time>(DateTime.now-3).to_time%>
+          <p><%= link_to book.title, book %>(new)</p>
+    <% end %>
+<% end %>
+</div>
+<%= paginate @books %>

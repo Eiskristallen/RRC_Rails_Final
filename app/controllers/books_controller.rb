@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def index
     @c = Category.all.map{ |u| [ u.name, u.id ] }
-    @books = Book.paginate(:page => params[:page], :per_page=>5).order(:title)
+    @books = Book.all
     @categories = Category.all
   end
 

@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
-  get 'categories/index'
-  get 'categories/show'
+  devise_for :accounts, controllers:{registrations: 'accounts/registrations'}
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to:"books#index"

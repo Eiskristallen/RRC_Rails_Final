@@ -19,7 +19,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'activeadmin'
 gem 'devise'
-gem 'will_paginate'
+
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 # Use Redis adapter to run Action Cable in production

@@ -6,7 +6,6 @@
 <% end %>
 </div>
 <div>
-<%= will_paginate @books %>  
 <% @books.each do |book| %>
   <% if book.quantity != 0 %>
      <p> <%=link_to book.title,book%></p>
@@ -14,7 +13,6 @@
       <p><%=book.title%>(Sold out)</p>
     <% end %>
 <% end %>
-<%= will_paginate @books %>
 </div>
 <div>
 <h2>New book</h2>

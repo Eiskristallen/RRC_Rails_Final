@@ -1,5 +1,10 @@
 <h1>Books</h1>
-<%= @customer.email%>
+<% if @customer %>
+  <%= @customer.email%>
+<% else %>
+  <p>customer</p>
+<% end %>
+
 <div>
 <% @categories.each do |category| %>
  <p><%=link_to category.name, category%></p> 

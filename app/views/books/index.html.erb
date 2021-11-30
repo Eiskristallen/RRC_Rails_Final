@@ -1,6 +1,7 @@
 <h1>Books</h1>
 <% if @customer %>
   <%= @customer.email%>
+  <%=session[:cart]%>
 <% else %>
   <p>customer</p>
 <% end %>
@@ -15,6 +16,21 @@
 <% @books.each do |book| %>
   <% if book.quantity != 0 %>
      <p> <%=link_to book.title,book%></p>
+        <% if @cart_items.include?(book) %>
+         <p>the item is in your cart</p>
+          <p><%= form_with(model:@book, url: modify_add_cart_path(:quantity,:id)) do |f| %>
+               <%= f.number_field :quantity,in: 1.to_i..book.quantity.to_i,:value => session[:cart][book.id.to_s]['quantity']%>
+               <%= hidden_field_tag(:id, book.id) %>
+               <%= f.submit "Modify" %></p>
+             <% end %>
+          <p><%= button_to "Remove from Cart", remove_from_cart_path, :method => "delete",params:{id:book.id}%></p>
+        <% else %>
+      <p><%= form_with(model:@book, url: add_to_cart_path(:quantity,:id)) do |f| %>
+          <%= f.number_field :quantity%>
+           <%= hidden_field_tag(:id, book.id) %>
+          <%= f.submit "add" %>
+          <% end %>
+        <% end %></p>
     <% else %>
       <p><%=book.title%>(Sold out)</p>
     <% end %>
